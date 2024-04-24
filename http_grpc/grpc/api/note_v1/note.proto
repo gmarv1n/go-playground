@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
 
-option go_package = "go-grpc";
+option go_package = "github.com/gmarv1n/go-playground/http_grpc/api/pkg/note_v1;note_v1";
 
 service NoteV1 {
   rpc Create(CreateRequest) returns (CreateResponse);
@@ -72,5 +72,3 @@ message DeleteRequest {
 }
 
 
-
-// Lesson #3.2 video, time: 00:07:00
