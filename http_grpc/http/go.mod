@@ -1,4 +1,4 @@
-module go-http
+module github.com/gmarv1n/go-playground/http_grpc
 
 go 1.21
 
