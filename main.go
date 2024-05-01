@@ -150,13 +150,13 @@ func decodeMsg(msg []rune, code []int) {
 }
 
 func main() {
-	decodeMsg(
-		[]rune("чынуытйлчмкшкд уаеоое ск "),
-		[]int{
-			13, 1, 22, 4, 24, 0, 16, 11, 7, 20, 9, 14, 3,
-			23, 2, 12, 21, 15, 6, 19, 8, 17, 5, 18, 10,
-		},
-	)
+	//decodeMsg(
+	//	[]rune("чынуытйлчмкшкд уаеоое ск "),
+	//	[]int{
+	//		13, 1, 22, 4, 24, 0, 16, 11, 7, 20, 9, 14, 3,
+	//		23, 2, 12, 21, 15, 6, 19, 8, 17, 5, 18, 10,
+	//	},
+	//)
 
 	//fmt.Println(restoreString("codeleet", []int{4, 5, 6, 7, 0, 2, 1, 3}))
 
@@ -175,4 +175,8 @@ func main() {
 
 	//fmt.Println("\n", quickSort([]int{8, 3, 4, 4, 7, 6, 9, 1, 5, 12, 54, 2, 65, 8, 6, 65, 43, 11, -5}))
 
+	var uintPtr uintptr
+
+	fmt.Println(uintPtr)
+	fmt.Println(&uintPtr)
 }
