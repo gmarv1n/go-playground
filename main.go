@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	_ "runtime/pprof"
 	"slices"
@@ -175,8 +176,40 @@ func main() {
 
 	//fmt.Println("\n", quickSort([]int{8, 3, 4, 4, 7, 6, 9, 1, 5, 12, 54, 2, 65, 8, 6, 65, 43, 11, -5}))
 
-	var uintPtr uintptr
+	//var uintPtr uintptr
+	//
+	//fmt.Println(uintPtr)
+	//fmt.Println(&uintPtr)
 
-	fmt.Println(uintPtr)
-	fmt.Println(&uintPtr)
+	varia := SomeType{
+		ID: 1,
+	}
+
+	if err := Validation(varia); err != nil {
+		fmt.Println(err.Error())
+	}
+}
+
+type SomeType struct {
+	ID int
+}
+
+func (s *SomeType) Validate() error {
+	return errors.New("error occurred")
+}
+
+type Validatable interface {
+	Validate() error
+}
+
+func Validation(val interface{}) error {
+
+	switch v := val.(type) {
+	case Validatable:
+		return v.Validate()
+	default:
+		fmt.Println(v)
+	}
+
+	return nil
 }
