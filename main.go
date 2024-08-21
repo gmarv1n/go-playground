@@ -150,44 +150,20 @@ func decodeMsg(msg []rune, code []int) {
 	fmt.Println(string(res))
 }
 
+type privetFunc func(in string) string
+
 func main() {
-	//decodeMsg(
-	//	[]rune("чынуытйлчмкшкд уаеоое ск "),
-	//	[]int{
-	//		13, 1, 22, 4, 24, 0, 16, 11, 7, 20, 9, 14, 3,
-	//		23, 2, 12, 21, 15, 6, 19, 8, 17, 5, 18, 10,
-	//	},
-	//)
 
-	//fmt.Println(restoreString("codeleet", []int{4, 5, 6, 7, 0, 2, 1, 3}))
+	f := func(in string) string {
+		fmt.Println(in)
 
-	//fmt.Println(cellsInRange("K1:L2"))
-
-	//fmt.Println(reversePrefix("sometextGrest", 'G'))
-	//fmt.Println(reversePrefix("abcdefd", 'd'))
-
-	//fmt.Println(sortPeople([]string{"Mary", "John", "Emma"}, []int{180, 165, 170}))
-
-	//fmt.Println(countKeyChanges("zzzzzZZZZzzHHHhhGGg"))
-	//fmt.Println(countKeyChanges(""))
-	//fmt.Println(countKeyChanges("aAbBcC"))
-
-	//fmt.Println("\n", recursiveSum([]int{4, 5, 6, 7, 2, 3, 4, 5}))
-
-	//fmt.Println("\n", quickSort([]int{8, 3, 4, 4, 7, 6, 9, 1, 5, 12, 54, 2, 65, 8, 6, 65, 43, 11, -5}))
-
-	//var uintPtr uintptr
-	//
-	//fmt.Println(uintPtr)
-	//fmt.Println(&uintPtr)
-
-	varia := SomeType{
-		ID: 1,
+		return in
 	}
 
-	if err := Validation(varia); err != nil {
-		fmt.Println(err.Error())
-	}
+	d := (privetFunc)(f)("text")
+
+	fmt.Println(d)
+
 }
 
 type SomeType struct {
